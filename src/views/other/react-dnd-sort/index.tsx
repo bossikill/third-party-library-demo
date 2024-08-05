@@ -15,23 +15,7 @@ export default function View() {
   // 用来记录当前拖拽的是哪个元素
   const sourceNode = useRef(null)
 
-  // useEffect(() => {
-  //   console.log('🚀 ~ useEffect ~ data:', selectedData)
-  // }, [selectedData])
-
   useDrop(dropRef, {
-    onText: (text, e) => {
-      console.log(e, text)
-    },
-    onFiles: (files, e) => {
-      console.log(e, files)
-    },
-    onUri: (uri, e) => {
-      console.log(e, uri)
-    },
-    // onDrop: e => {
-    //   console.log(e)
-    // },
     onDom: (content: string, event: any) => {
       if (event.target == dropRef.current || event.target == sourceNode.current) return
       // console.log(event, content)
@@ -63,21 +47,6 @@ export default function View() {
 
       // 重置
       reset()
-    },
-    onDragEnter: () => {
-      // console.log('🚀 ~ View ~ event:', event)
-      // event.preventDefault()
-      // 排除掉一些情况，比如拖拽的时候进入了父元素 或者 是本身自己
-      // if (event.target == dropRef.current || event.target == sourceNode.current) return
-      // const children = [...dropRef.current.children]
-      // 通过所处元素的下标来判断是上方还是下方
-      // const sourceIndex = children.indexOf(sourceNode.current)
-      // const targetIndex = children.indexOf(event.target)
-      // console.log('🚀 ~ View ~ sourceIndex:', sourceIndex, targetIndex)
-      // setTargetIndex(targetIndex)
-      // const newData = data.slice()
-      // newData.splice(targetIndex, 1, ...newData.splice(sourceIndex, 1, newData[targetIndex]))
-      // setData(newData)
     },
     onDragOver: (event: React.DragEvent) => {
       if (event.target == dropRef.current || event.target == sourceNode.current) return
@@ -141,10 +110,6 @@ export default function View() {
   const reset = () => {
     setTargetIndex(null)
   }
-
-  // useEffect(() => {
-  //   console.log('🚀 ~ View ~ isDrag:', isDrag)
-  // }, [isDrag])
 
   return (
     <div>
