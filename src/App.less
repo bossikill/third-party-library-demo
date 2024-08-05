@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * 一般公共样式
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.ant-app,
+.view-wrapper {
+  // user-select: none;
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --color-text-normal: #b0b0b0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 6px;
+}
+::-webkit-scrollbar-corner {
+  display: block;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: var(--color-text-normal);
+}
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+
+/**
+ * 业务
+ */
