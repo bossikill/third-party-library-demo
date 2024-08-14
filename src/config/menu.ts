@@ -10,6 +10,11 @@ const MenuItem = [
     ]
   },
   {
+    key: 'zustand',
+    label: 'zustand',
+    children: [{ label: '重复渲染的问题', key: '/zustand/render-issue' }]
+  },
+  {
     key: '其他',
     label: '其他',
     children: [

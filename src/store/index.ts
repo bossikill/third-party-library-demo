@@ -14,7 +14,7 @@ export const useStore = create<IStore>()(
     }),
     {
       // name of item in the storage (must be unique)
-      name: 'fabrcjs-demo',
+      name: 'third-party-library-demo',
       // (optional) by default the 'localStorage' is used
       storage: createJSONStorage(() => sessionStorage)
       // 选择持久化的数据
